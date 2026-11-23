@@ -6,7 +6,11 @@ import java.util.Scanner;
 
 public class Homework12 {
     public static void main(String[] args) {
-        boolean notDone = false;
+        boolean notDone = true;
+        String user = null;
+        int length = 0;
+        String listPath = null;
+        String pswrd = null;
         Scanner input = new Scanner(System.in);
         System.out.println(
                 "Welcome to walkerHash, the ultimate dehasing algorithm! Please type in an example command. Use h or help for help");
@@ -17,15 +21,24 @@ public class Homework12 {
 
             } else if (commandsSeprated[0].equals("crack")) {
                 if (commandsSeprated[1].equals("bruteFore")) {
-                    int length = Integer.parseInt(commandsSeprated[2]);
+                    length = Integer.parseInt(commandsSeprated[2]);
                 } else if (commandsSeprated[1].equals("dictionary")) {
-                    String listPath = commandsSeprated[3];
+                    listPath = commandsSeprated[3];
                 }
             } else if (commandsSeprated[0].equals("help") || commandsSeprated[0].equals("h")) {
                 helpMessage();
-            } else {
+            } else if (commandsSeprated[0].equals("add")) {
+                user = commandsSeprated[1];
+                pswrd = commandsSeprated[2];
+            } else if (commandsSeprated[0].equals("list")) {
+
+            } else if (commandsSeprated[0].equals("stats")) {
+                System.out.println(cracker.attemptCounter);
+            }
+            else {
                 throw new IllegalArgumentException("Not valid command input. Use h or help for help");
             }
+            notDone = false;
         }
     }
 
