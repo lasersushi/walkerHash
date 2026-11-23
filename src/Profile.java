@@ -2,13 +2,15 @@
 // AT CS
 // Homework #12
 
-public class account {
+public class Profile {
     private String username;
-    private String storedHash;
+    private int storedHash;
+    static int profileCounter = 0;
 
-    public account(String username, String storedHash) {
+    public Profile(String username, int storedHash) {
         this.username = username;
         this.storedHash = storedHash;
+        profileCounter++;
     }
 
     public void resetUsername(String newUsername) {
@@ -19,7 +21,7 @@ public class account {
         return username;
     }
 
-    public String getHash() {
+    public int getHash() {
         return storedHash;
     }
 }
