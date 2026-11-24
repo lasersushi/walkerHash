@@ -27,8 +27,8 @@ public class Homework12 {
                         if (sep.length == 3) {
                             System.out.println(cracker.dictionaryAttack(sep[2]));
                         }
-                    } else if (sep[1].equals("bruteForce")) {
-                        System.out.println(cracker.bruteForce());
+                    } else if (sep[1].equals("bruteForce") && sep.length == 3) {
+                        System.out.println(cracker.bruteForce(Integer.parseInt(sep[2])));
                     }
                 } else {
                     helpMessage();

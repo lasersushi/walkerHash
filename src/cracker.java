@@ -36,7 +36,8 @@ public class Cracker {
                 + "\nIf there was something that wasn't guessed, consider using a brute force attack to guess it.";
     }
 
-    public String bruteForce() {
+    public String bruteForce(int len) {
+        bruteForceLength = len;
         ArrayList<String> cracked = new ArrayList<>();
         for (int a = 0; a < profiles.size(); a++) {
             Profile p = profiles.get(a);
@@ -47,6 +48,7 @@ public class Cracker {
                     if (guessHash == p.getHash()) {
                         cracked.add(p.getUsername() + " -> " + guess);
                     }
+                    attemptCounter++;
                 }
             }
         }
