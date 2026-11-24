@@ -10,6 +10,7 @@ public class Cracker {
     private int attemptCounter = 0;
     private int bruteForceLength;
     private ArrayList<Profile> profiles = new ArrayList<>();
+    final String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%";
 
     public String dictionaryAttack(String path) {
         // ArrayList<String> notGuessed = new ArrayList<>();
@@ -31,7 +32,25 @@ public class Cracker {
                 }
             }
         }
-        return cracked.toString() + "\nIf there was something that wasn't guessed, consider using a brute force attack to guess it.";
+        return cracked.toString()
+                + "\nIf there was something that wasn't guessed, consider using a brute force attack to guess it.";
+    }
+
+    public String bruteForce() {
+        ArrayList<String> cracked = new ArrayList<>();
+        for (int a = 0; a < profiles.size(); a++) {
+            Profile p = profiles.get(a);
+            for (int i = 0; i < alphabet.length(); i++) {
+                for (int b = 0; b < alphabet.length(); b++) {
+                    String guess = "" + alphabet.charAt(i) + alphabet.charAt(b);
+                    int guessHash = guess.hashCode();
+                    if (guessHash == p.getHash()) {
+                        cracked.add(p.getUsername() + " -> " + guess);
+                    }
+                }
+            }
+        }
+        return cracked.toString();
     }
 
     public void addEntry(String username, String password) {
