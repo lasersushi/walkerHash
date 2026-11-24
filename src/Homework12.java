@@ -6,44 +6,42 @@ import java.util.Scanner;
 
 public class Homework12 {
     public static void main(String[] args) {
+        Cracker cracker = new Cracker();
         boolean notDone = true;
-        String user = null;
-        int length = 0;
         String listPath = null;
-        String pswrd = null;
         Scanner input = new Scanner(System.in);
         System.out.println(
                 "Welcome to walkerHash, the ultimate dehasing algorithm! Please type in an example command. Use h or help for help");
         while (notDone) {
             String command = input.nextLine();
-            String[] commandsSeprated = command.split(" ");
-            if (commandsSeprated[0].equals("hash")) {
-
-            } else if (commandsSeprated[0].equals("crack")) {
-                if (commandsSeprated[1].equals("bruteFore")) {
-                    length = Integer.parseInt(commandsSeprated[2]);
-                } else if (commandsSeprated[1].equals("dictionary")) {
-                    listPath = commandsSeprated[3];
+            String[] sep = command.split(" ");
+            if (sep[0].equals("add")) {
+                if (sep.length > 2 && sep.length < 4) {
+                    cracker.addEntry(sep[1], sep[2]);
+                } else {
+                    helpMessage();
                 }
-            } else if (commandsSeprated[0].equals("help") || commandsSeprated[0].equals("h")) {
+            } else if (sep[0].equals("crack")) {
+                if (sep.length > 1) {
+                    if (sep[1].equals("dictionary") || sep[1].equals("wordlist") || sep[1].equals("d")) {
+                        if (sep.length == 3) {
+                            System.out.println(cracker.dictionaryAttack(sep[2]));
+                        }
+                    }
+                } else {
+                    helpMessage();
+                }
+            } else if (sep[0].equals("quit")) {
+                notDone = false;
+            } else {
                 helpMessage();
-            } else if (commandsSeprated[0].equals("add")) {
-                user = commandsSeprated[1];
-                pswrd = commandsSeprated[2];
-            } else if (commandsSeprated[0].equals("list")) {
-
-            } else if (commandsSeprated[0].equals("stats")) {
-                System.out.println(cracker.attemptCounter);
             }
-            else {
-                throw new IllegalArgumentException("Not valid command input. Use h or help for help");
-            }
-            notDone = false;
         }
+        input.close();
     }
 
     public static void helpMessage() {
         System.out.println(
-                "Legal arguments:\n\nhash\nReturns to you a hashed version of the inputed password\ncrack <type> <subCommand>\nThe only acceptable types are bruteForce and dictionaryAttack.\nFor dictionaryAttack, you must also input afterwarcs the path to the wordlist. For bruteForce, you will need to input the max length the bruteForce algorithm should run up to.");
+                "Legal arguments:\n\nhash\nReturns to you a hashed version of the inputed password\ncrack <type> <subCommand>\nThe only acceptable types are bruteForce and dictionaryAttack.\nFor dictionaryAttack, you must also input afterwarcs the path to the wordlist. For bruteForce, you will need to input the max length the bruteForce algorithm should run up to.\nadd <username> <password>");
     }
 }
