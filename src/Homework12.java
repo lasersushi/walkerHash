@@ -35,6 +35,8 @@ public class Homework12 {
                 notDone = false;
             } else if (sep[0].equals("list")) {
                 System.out.println(cracker.getProfiles());
+            } else if (sep[0].equals("stats")) {
+                System.out.println(Cracker.attemptCounter);
             } else {
                 helpMessage();
             }
