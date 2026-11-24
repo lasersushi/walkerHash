@@ -41,4 +41,8 @@ public class Cracker {
     public static int hash(String unhashed) {
         return unhashed.hashCode();
     }
+
+    public ArrayList<Profile> getProfiles() {
+        return new ArrayList<>(profiles);
+    }
 }
