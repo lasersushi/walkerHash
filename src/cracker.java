@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Cracker {
-    int attemptCounter = 0;
+    private int attemptCounter = 0;
     private int bruteForceLength;
     private ArrayList<Profile> profiles = new ArrayList<>();
 
@@ -44,5 +44,9 @@ public class Cracker {
 
     public ArrayList<Profile> getProfiles() {
         return new ArrayList<>(profiles);
+    }
+
+    public int getAttempts() {
+        return attemptCounter;
     }
 }
