@@ -33,6 +33,8 @@ public class Homework12 {
                 }
             } else if (sep[0].equals("quit")) {
                 notDone = false;
+            } else if (sep[0].equals("list")) {
+                cracker.getProfiles();
             } else {
                 helpMessage();
             }
