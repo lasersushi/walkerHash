@@ -34,7 +34,7 @@ public class Homework12 {
             } else if (sep[0].equals("quit")) {
                 notDone = false;
             } else if (sep[0].equals("list")) {
-                cracker.getProfiles();
+                System.out.println(cracker.getProfiles());
             } else {
                 helpMessage();
             }
@@ -44,6 +44,6 @@ public class Homework12 {
 
     public static void helpMessage() {
         System.out.println(
-                "Legal arguments:\n\nhash\nReturns to you a hashed version of the inputed password\ncrack <type> <subCommand>\nThe only acceptable types are bruteForce and dictionaryAttack.\nFor dictionaryAttack, you must also input afterwarcs the path to the wordlist. For bruteForce, you will need to input the max length the bruteForce algorithm should run up to.\nadd <username> <password>");
+                "Legal arguments:\n\nhash\nReturns to you a hashed version of the inputed password\ncrack <type> <subCommand>\nThe only acceptable types are bruteForce and dictionaryAttack.\nFor dictionaryAttack, you must also input afterwarcs the path to the wordlist. For bruteForce, you will need to input the max length the bruteForce algorithm should run up to.\nadd <username> <password>\nThis command adds a new user to the cracker.\nlist\nThis commands lists all the users in the cracker object username and also includes their hashed password.");
     }
 }

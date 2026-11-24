@@ -24,4 +24,8 @@ public class Profile {
     public int getHash() {
         return storedHash;
     }
+
+    public String toString() {
+        return username + " -> " + storedHash;
+    }
 }
