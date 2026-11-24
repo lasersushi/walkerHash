@@ -27,7 +27,7 @@ public class Cracker {
             for (int i = 0; i < profiles.size(); i++) {
                 Profile p = profiles.get(i);
                 if (hashed == p.getHash()) {
-                    cracked.add(p.getUsername());
+                    cracked.add(p.getUsername() + " -> " + line);
                 }
             }
         }
