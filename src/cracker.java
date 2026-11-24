@@ -10,7 +10,7 @@ public class Cracker {
     private int attemptCounter = 0;
     private int bruteForceLength;
     private ArrayList<Profile> profiles = new ArrayList<>();
-    final String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%";
+    static final String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%";
 
     public String dictionaryAttack(String path) {
         // ArrayList<String> notGuessed = new ArrayList<>();
