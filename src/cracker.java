@@ -39,20 +39,27 @@ public class Cracker {
     public String bruteForce(int len) {
         bruteForceLength = len;
         ArrayList<String> cracked = new ArrayList<>();
-        for (int a = 0; a < profiles.size(); a++) {
-            Profile p = profiles.get(a);
-            for (int i = 0; i < alphabet.length(); i++) {
-                for (int b = 0; b < alphabet.length(); b++) {
-                    String guess = "" + alphabet.charAt(i) + alphabet.charAt(b);
-                    int guessHash = guess.hashCode();
-                    if (guessHash == p.getHash()) {
-                        cracked.add(p.getUsername() + " -> " + guess);
-                    }
-                    attemptCounter++;
-                }
-            }
+        for (int i = 1; i <= bruteForceLength; i++) {
+            generate("", i, cracked);
         }
         return cracked.toString();
+    }
+
+    private void generate(String guessSoFar, int targetLen, ArrayList<String> cracked) {
+        if (guessSoFar.length() == targetLen) {
+            int hashed = guessSoFar.hashCode();
+            attemptCounter++;
+            for (int i = 0; i < profiles.size(); i++) {
+                Profile p = profiles.get(i);
+                if (hashed == p.getHash()) {
+                    cracked.add(p.getUsername() + " -> " + guessSoFar);
+                }
+            }
+            return;
+        }
+        for (int i = 0; i < alphabet.length(); i++) {
+            generate(guessSoFar + alphabet.charAt(i), targetLen, cracked);
+        }
     }
 
     public void addEntry(String username, String password) {
