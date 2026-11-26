@@ -16,7 +16,6 @@ public class Cracker {
     static final String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%";
 
     public String dictionaryAttack(String path) {
-        // ArrayList<String> notGuessed = new ArrayList<>();
         ArrayList<String> cracked = new ArrayList<>();
         Scanner input;
         try {
