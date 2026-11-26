@@ -91,11 +91,10 @@ public class Cracker {
         return formattingThingy.format(attemptCounter);
     }
 
-    // TODO: Fix valid input thingy
     private boolean validInput(String password) {
         for (int i = 0; i < password.length(); i++) {
-            String selected = password.substring(i, i++);
-            if (alphabet.contains(selected)) {
+            String selected = password.substring(i, i + 1);
+            if (!alphabet.contains(selected)) {
                 return false;
             }
         }

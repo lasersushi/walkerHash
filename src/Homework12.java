@@ -19,7 +19,8 @@ public class Homework12 {
                     try {
                         cracker.addEntry(sep[1], sep[2]);
                     } catch (IllegalArgumentException e) {
-                        System.out.println("Illegal input of password characters. Legal Inputs are the following: " + cracker.alphabet + "\n");
+                        System.out.println("Illegal input of password characters. Legal Inputs are the following: "
+                                + cracker.alphabet + "\n");
                         helpMessage();
                     }
                 } else {
