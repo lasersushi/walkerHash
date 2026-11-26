@@ -25,9 +25,13 @@ public class Homework12 {
                     if (sep[1].equals("dictionary") || sep[1].equals("wordlist") || sep[1].equals("d")) {
                         if (sep.length == 3) {
                             System.out.println(cracker.dictionaryAttack(sep[2]));
+                        } else {
+                            helpMessage();
                         }
                     } else if (sep[1].equals("bruteForce") && sep.length == 3) {
                         System.out.println(cracker.bruteForce(Integer.parseInt(sep[2])));
+                    } else {
+                        helpMessage();
                     }
                 } else {
                     helpMessage();
