@@ -10,7 +10,7 @@ public class Homework12 {
         boolean notDone = true;
         Scanner input = new Scanner(System.in);
         System.out.println(
-                "Welcome to walkerHash, the ultimate dehasing algorithm! Please type in an example command. Use h or help for help");
+                "Welcome to walkerHash, the ultimate cracking algorithm! Please type in an example command. Use h or help for help");
         while (notDone) {
             String command = input.nextLine();
             String[] sep = command.split(" ");
