@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.NumberFormat;
 import java.util.*;
 
 public class Cracker {
@@ -83,7 +84,8 @@ public class Cracker {
         return new ArrayList<>(profiles);
     }
 
-    public int getAttempts() {
-        return attemptCounter;
+    public String getAttempts() {
+        NumberFormat formattingThingy = NumberFormat.getInstance();
+        return formattingThingy.format(attemptCounter);
     }
 }
