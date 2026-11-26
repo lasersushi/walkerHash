@@ -71,11 +71,11 @@ public class Cracker {
 
     public static String hash(String unhashed) {
         try {
-        MessageDigest digester = MessageDigest.getInstance("SHA-256");
-        byte[] digest = digester.digest(unhashed.getBytes());
-        String hex = HexFormat.of().formatHex(digest);
-        return hex;
-        } catch(NoSuchAlgorithmException e) {
+            MessageDigest digester = MessageDigest.getInstance("SHA-256");
+            byte[] digest = digester.digest(unhashed.getBytes());
+            String hex = HexFormat.of().formatHex(digest);
+            return hex;
+        } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
     }
