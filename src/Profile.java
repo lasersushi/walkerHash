@@ -7,25 +7,27 @@ public class Profile {
     private String storedHash;
     static int profileCounter = 0;
 
-    public Profile(String username, String storedHash) {
+    public Profile(String username, String storedHash) { // Profile constructor, assigns values to username and also the
+                                                         // hash
         this.username = username;
         this.storedHash = storedHash;
-        profileCounter++;
+        profileCounter++; // Increments profile counter everytime the porfile constructor is used
     }
 
-    public void resetUsername(String newUsername) {
+    public void resetUsername(String newUsername) { // Resets the username of a profile
         username = newUsername;
     }
 
-    public String getUsername() {
+    public String getUsername() { // Gets the username instance variable
         return username;
     }
 
-    public String getHash() {
+    public String getHash() { // Gets the hash instance variable
         return storedHash;
     }
 
     public String toString() {
-        return username + " -> " + storedHash;
+        return username + " -> " + storedHash; // To string method which returns the username and the stored hash(not
+                                               // the password)
     }
 }
