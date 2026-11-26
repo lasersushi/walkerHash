@@ -20,7 +20,7 @@ public class Homework12 {
                         cracker.addEntry(sep[1], sep[2]);
                     } catch (IllegalArgumentException e) {
                         System.out.println("Illegal input of password characters. Legal Inputs are the following: "
-                                + cracker.alphabet + "\n");
+                                + Cracker.alphabet + "\n");
                         helpMessage();
                     }
                 } else {
@@ -50,6 +50,7 @@ public class Homework12 {
             } else if (sep[0].equals("quit")) {
                 notDone = false;
             } else if (sep[0].equals("list")) {
+                System.out.println("Number of profiles: " + Profile.profileCounter);
                 System.out.println(cracker.getProfiles());
             } else if (sep[0].equals("stats")) {
                 System.out.println(cracker.getAttempts());
