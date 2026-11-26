@@ -13,7 +13,7 @@ public class Profile {
         this.storedHash = storedHash;
         profileCounter++; // Increments profile counter everytime the porfile constructor is used
     }
-
+    //TODO: Find usage for resetUsername
     public void resetUsername(String newUsername) { // Resets the username of a profile
         username = newUsername;
     }
