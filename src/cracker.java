@@ -4,7 +4,11 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
+
+import javax.management.RuntimeErrorException;
 
 public class Cracker {
     private int attemptCounter = 0;
@@ -23,7 +27,7 @@ public class Cracker {
         }
         while (input.hasNextLine()) {
             String line = input.nextLine();
-            int hashed = line.hashCode();
+            String hashed = hash(line);
             attemptCounter++;
             for (int i = 0; i < profiles.size(); i++) {
                 Profile p = profiles.get(i);
@@ -47,7 +51,7 @@ public class Cracker {
 
     private void generate(String guessSoFar, int targetLen, ArrayList<String> cracked) {
         if (guessSoFar.length() == targetLen) {
-            int hashed = guessSoFar.hashCode();
+            String hashed = hash(guessSoFar);
             attemptCounter++;
             for (int i = 0; i < profiles.size(); i++) {
                 Profile p = profiles.get(i);
@@ -66,8 +70,15 @@ public class Cracker {
         profiles.add(new Profile(username, hash(password)));
     }
 
-    public static int hash(String unhashed) {
-        return unhashed.hashCode();
+    public static String hash(String unhashed) {
+        try {
+        MessageDigest digester = MessageDigest.getInstance("SHA-256");
+        byte[] digest = digester.digest(unhashed.getBytes());
+        String hex = HexFormat.of().formatHex(digest);
+        return hex;
+        } catch(NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public ArrayList<Profile> getProfiles() {

@@ -4,10 +4,10 @@
 
 public class Profile {
     private String username;
-    private int storedHash;
+    private String storedHash;
     static int profileCounter = 0;
 
-    public Profile(String username, int storedHash) {
+    public Profile(String username, String storedHash) {
         this.username = username;
         this.storedHash = storedHash;
         profileCounter++;
@@ -21,7 +21,7 @@ public class Profile {
         return username;
     }
 
-    public int getHash() {
+    public String getHash() {
         return storedHash;
     }
 
