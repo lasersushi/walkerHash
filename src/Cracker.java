@@ -65,6 +65,9 @@ public class Cracker {
     }
 
     public void addEntry(String username, String password) {
+        if (!validInput(password)) {
+            throw new IllegalArgumentException("Invalid password characters");
+        }
         profiles.add(new Profile(username, hash(password)));
     }
 
@@ -86,5 +89,15 @@ public class Cracker {
     public String getAttempts() {
         NumberFormat formattingThingy = NumberFormat.getInstance();
         return formattingThingy.format(attemptCounter);
+    }
+
+    private boolean validInput(String password) {
+        for (int i = 0; i < password.length(); i++) {
+            String selected = password.substring(i, i++);
+            if (alphabet.contains(selected)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

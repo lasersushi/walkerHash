@@ -16,7 +16,12 @@ public class Homework12 {
             String[] sep = command.split(" ");
             if (sep[0].equals("add")) {
                 if (sep.length > 2 && sep.length < 4) {
-                    cracker.addEntry(sep[1], sep[2]);
+                    try {
+                        cracker.addEntry(sep[1], sep[2]);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Illegal input of password characters. Legal Inputs are the following: " + cracker.alphabet + "\n");
+                        helpMessage();
+                    }
                 } else {
                     helpMessage();
                 }
