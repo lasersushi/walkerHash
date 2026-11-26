@@ -7,7 +7,9 @@ import java.io.FileNotFoundException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.NumberFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HexFormat;
+import java.util.Scanner;
 
 public class Cracker {
     private int attemptCounter = 0;

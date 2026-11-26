@@ -44,6 +44,10 @@ public class Homework12 {
                     } else {
                         helpMessage();
                     }
+                } else if (sep[0].equals("rename")) {
+                    if (sep.length == 2) {
+                        
+                    }
                 } else {
                     helpMessage();
                 }
