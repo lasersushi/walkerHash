@@ -8,8 +8,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
-import javax.management.RuntimeErrorException;
-
 public class Cracker {
     private int attemptCounter = 0;
     private int bruteForceLength;

@@ -8,7 +8,6 @@ public class Homework12 {
     public static void main(String[] args) {
         Cracker cracker = new Cracker();
         boolean notDone = true;
-        String listPath = null;
         Scanner input = new Scanner(System.in);
         System.out.println(
                 "Welcome to walkerHash, the ultimate dehasing algorithm! Please type in an example command. Use h or help for help");
