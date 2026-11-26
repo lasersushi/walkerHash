@@ -38,7 +38,8 @@ public class Homework12 {
                         try {
                             System.out.println(cracker.bruteForce(Integer.parseInt(sep[2])));
                         } catch (NumberFormatException e) {
-                            System.out.println("Illegal input of max length. Length must inputed as an integer number \n");
+                            System.out.println(
+                                    "Illegal input of max length. Length must inputed as an integer number \n");
                             helpMessage();
                         }
                     } else {
@@ -46,7 +47,7 @@ public class Homework12 {
                     }
                 } else if (sep[0].equals("rename")) {
                     if (sep.length == 2) {
-                        
+
                     }
                 } else {
                     helpMessage();
