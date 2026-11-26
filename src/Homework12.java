@@ -28,7 +28,7 @@ public class Homework12 {
                 }
             } else if (sep[0].equals("crack")) {
                 if (sep.length > 1) {
-                    if (sep[1].equals("dictionary") || sep[1].equals("wordlist") || sep[1].equals("d")) {
+                    if (sep[1].equals("dictionaryAttack")) {
                         if (sep.length == 3) {
                             System.out.println(cracker.dictionaryAttack(sep[2]));
                         } else {
