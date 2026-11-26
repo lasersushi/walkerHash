@@ -31,7 +31,7 @@ public class Cracker {
             attemptCounter++;
             for (int i = 0; i < profiles.size(); i++) {
                 Profile p = profiles.get(i);
-                if (hashed == p.getHash()) {
+                if (hashed.equals(p.getHash())) {
                     cracked.add(p.getUsername() + " -> " + line);
                 }
             }
@@ -55,7 +55,7 @@ public class Cracker {
             attemptCounter++;
             for (int i = 0; i < profiles.size(); i++) {
                 Profile p = profiles.get(i);
-                if (hashed == p.getHash()) {
+                if (hashed.equals(p.getHash())) {
                     cracked.add(p.getUsername() + " -> " + guessSoFar);
                 }
             }
