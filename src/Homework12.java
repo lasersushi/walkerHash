@@ -35,7 +35,12 @@ public class Homework12 {
                             helpMessage();
                         }
                     } else if (sep[1].equals("bruteForce") && sep.length == 3) {
-                        System.out.println(cracker.bruteForce(Integer.parseInt(sep[2])));
+                        try {
+                            System.out.println(cracker.bruteForce(Integer.parseInt(sep[2])));
+                        } catch (NumberFormatException e) {
+                            System.out.println("Illegal input of max length. Length must inputed as an integer number \n");
+                            helpMessage();
+                        }
                     } else {
                         helpMessage();
                     }
