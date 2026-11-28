@@ -13,7 +13,6 @@ public class Profile {
 
     /**
      * Creates a new profile for the given user.
-     * 
      * @param username   is the user's given username
      * @param storedHash is a hashed version of the user's password
      */
