@@ -183,4 +183,6 @@ public class Cracker {
             }
         }
     }
+
+    //TODO: Do comments for the new changes, maybe add some more comments to main
 }
