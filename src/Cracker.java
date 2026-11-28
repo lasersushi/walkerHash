@@ -93,7 +93,9 @@ public class Cracker {
     }
 
     /**
-     * This method creates a profile object and add it to the ArrayList {@link #profiles} which contains every profile
+     * This method creates a profile object and add it to the ArrayList
+     * {@link #profiles} which contains every profile
+     * 
      * @param username of the profile object you wish to create
      * @param password of the profile object you wish to create(unhashed string)
      * @throws IllegalArgumentExcpetion if the password contains invalid characters
@@ -106,7 +108,9 @@ public class Cracker {
     }
 
     /**
-     * This method uses SHA-256 to hash a String. SHA-256 was used here because the regular {@link #hashCode()} method had collisions.
+     * This method uses SHA-256 to hash a String. SHA-256 was used here because the
+     * regular {@link #hashCode()} method had collisions.
+     * 
      * @param unhashed asks for the unhashed string of the password
      * @return a hashed version of the inputed password.
      */
@@ -129,7 +133,9 @@ public class Cracker {
     }
 
     /**
-     * @return the number of times the program attempted to guess your password. Returns it in a formatted form(meaning with commas) using {@link NumberFormat}
+     * @return the number of times the program attempted to guess your password.
+     *         Returns it in a formatted form(meaning with commas) using
+     *         {@link NumberFormat}
      */
     public String getAttempts() {
         NumberFormat formattingThingy = NumberFormat.getInstance();
@@ -137,7 +143,9 @@ public class Cracker {
     }
 
     /**
-     * This method checks your password against the valid characters to see if the password can be used
+     * This method checks your password against the valid characters to see if the
+     * password can be used
+     * 
      * @param password asks for the inputed password
      * @return A boolean showing whether or not the password is good to be used
      */
