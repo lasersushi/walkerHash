@@ -21,12 +21,18 @@ public class Homework12 {
                 if (sep.length == 3) {
                     try {
                         cracker.addEntry(sep[1], sep[2]);
-                    } catch (IllegalArgumentException e) { // If the password is of illegal input, validInput throws an
+                    } catch (IllegalArgumentException e) { // If the password is of illegal input, validPassword throws
+                                                           // an
                                                            // IllegalArgument excpetion. The catch statment makes it
                                                            // look friendly
-                        System.out.println("Illegal input of password characters. Legal Inputs are the following: "
-                                + Cracker.alphabet + "\n");
-                        helpMessage();
+                        if (e.getMessage().equals("Invalid Password")) {
+                            System.out.println("Illegal input of password. Legal Inputs are the following: "
+                                    + Cracker.alphabet + "\n");
+                            helpMessage();
+                        } else {
+                            System.out.println("Username already taken \n");
+                            helpMessage();
+                        }
                     }
                 } else {
                     helpMessage();

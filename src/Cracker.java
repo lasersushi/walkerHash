@@ -101,8 +101,11 @@ public class Cracker {
      * @throws IllegalArgumentExcpetion if the password contains invalid characters
      */
     public void addEntry(String username, String password) {
-        if (!validInput(password)) {
-            throw new IllegalArgumentException("Invalid password characters");
+        if (!validPassword(password)) {
+            throw new IllegalArgumentException("Invalid password");
+        }
+        if (!validUsername(username)) {
+            throw new IllegalArgumentException("Invalid username");
         }
         profiles.add(new Profile(username, hash(password)));
     }
@@ -149,10 +152,20 @@ public class Cracker {
      * @param password asks for the inputed password
      * @return A boolean showing whether or not the password is good to be used
      */
-    private boolean validInput(String password) {
+    private boolean validPassword(String password) {
         for (int i = 0; i < password.length(); i++) {
             String selected = password.substring(i, i + 1);
             if (!alphabet.contains(selected)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean validUsername(String username) {
+        for (int i = 0; i < profiles.size(); i++) {
+            Profile p = profiles.get(i);
+            if (p.getUsername().equals(username)) {
                 return false;
             }
         }
