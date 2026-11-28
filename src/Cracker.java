@@ -173,11 +173,11 @@ public class Cracker {
     }
 
     public void rename(String olderUsername, String newUsername) {
+        if (!validUsername(newUsername)) {
+            throw new IllegalArgumentException();
+        }
         for (int i = 0; i < profiles.size(); i++) {
             Profile p = profiles.get(i);
-            if (!validUsername(newUsername)) {
-                throw new IllegalArgumentException();
-            }
             if (p.getUsername().equals(olderUsername)) {
                 p.resetUsername(newUsername);
             }
