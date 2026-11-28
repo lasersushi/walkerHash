@@ -150,4 +150,13 @@ public class Cracker {
         }
         return true;
     }
+
+    public void rename(String olderUsername, String newUsername) {
+        for (int i = 0; i < profiles.size(); i++) {
+            Profile p = profiles.get(i);
+            if (p.getUsername().equals(olderUsername)) {
+                p.resetUsername(newUsername);
+            }
+        }
+    }
 }

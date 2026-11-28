@@ -51,10 +51,6 @@ public class Homework12 {
                     } else {
                         helpMessage();
                     }
-                } else if (sep[0].equals("rename")) {
-                    if (sep.length == 2) {
-
-                    }
                 } else {
                     helpMessage();
                 }
@@ -65,6 +61,13 @@ public class Homework12 {
                 System.out.println(cracker.getProfiles());
             } else if (sep[0].equals("stats")) {
                 System.out.println(cracker.getAttempts());
+            } else if (sep[0].equals("rename")) {
+                if (sep.length == 3) {
+                    cracker.rename(sep[1], sep[2]);
+                } else {
+                    System.out.println("Illegal input parameters\n");
+                    helpMessage();
+                }
             } else {
                 helpMessage();
             }
