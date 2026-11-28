@@ -4,6 +4,9 @@
 
 import java.util.Scanner;
 
+/**
+ * Runs the walkerHash command loop and gives inputs to Cracker
+ */
 public class Homework12 {
     public static void main(String[] args) {
         Cracker cracker = new Cracker();
@@ -18,7 +21,9 @@ public class Homework12 {
                 if (sep.length == 3) {
                     try {
                         cracker.addEntry(sep[1], sep[2]);
-                    } catch (IllegalArgumentException e) {
+                    } catch (IllegalArgumentException e) { // If the password is of illegal input, validInput throws an
+                                                           // IllegalArgument excpetion. The catch statment makes it
+                                                           // look friendly
                         System.out.println("Illegal input of password characters. Legal Inputs are the following: "
                                 + Cracker.alphabet + "\n");
                         helpMessage();
@@ -37,7 +42,8 @@ public class Homework12 {
                     } else if (sep[1].equals("bruteForce") && sep.length == 3) {
                         try {
                             System.out.println(cracker.bruteForce(Integer.parseInt(sep[2])));
-                        } catch (NumberFormatException e) {
+                        } catch (NumberFormatException e) { // If you don't input an integer, the catch statment makes
+                                                            // it so it prints out a nice friendly error message
                             System.out.println(
                                     "Illegal input of max length. Length must inputed as an integer number \n");
                             helpMessage();
@@ -66,6 +72,7 @@ public class Homework12 {
         input.close();
     }
 
+    // Help message which shows the valid commands
     public static void helpMessage() {
         System.out.println(
                 "Legal arguments:\n\ncrack <type> <subCommand>\nThe only acceptable types are bruteForce and dictionaryAttack.\nFor dictionaryAttack, you must also input afterwarcs the path to the wordlist. For bruteForce, you will need to input the max length the bruteForce algorithm should run up to.\nadd <username> <password>\nThis command adds a new user to the cracker.\nlist\nThis commands lists all the users in the cracker object username and also includes their hashed password\nstats\nThis command lists the number of attempts it took to guess the password\nquit\nThis command quits the program");
