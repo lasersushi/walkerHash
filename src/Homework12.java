@@ -15,7 +15,7 @@ public class Homework12 {
             String command = input.nextLine();
             String[] sep = command.split(" ");
             if (sep[0].equals("add")) {
-                if (sep.length > 2 && sep.length < 4) {
+                if (sep.length == 3) {
                     try {
                         cracker.addEntry(sep[1], sep[2]);
                     } catch (IllegalArgumentException e) {
