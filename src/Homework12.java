@@ -69,7 +69,12 @@ public class Homework12 {
                 System.out.println(cracker.getAttempts());
             } else if (sep[0].equals("rename")) {
                 if (sep.length == 3) {
-                    cracker.rename(sep[1], sep[2]);
+                    try {
+                        cracker.rename(sep[1], sep[2]);
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Username already taken\n");
+                        helpMessage();
+                    }
                 } else {
                     System.out.println("Illegal input parameters\n");
                     helpMessage();
