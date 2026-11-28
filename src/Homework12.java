@@ -25,7 +25,7 @@ public class Homework12 {
                                                            // an
                                                            // IllegalArgument excpetion. The catch statment makes it
                                                            // look friendly
-                        if (e.getMessage().equals("Invalid Password")) {
+                        if (e.getMessage().equals("Invalid password")) {
                             System.out.println("Illegal input of password. Legal Inputs are the following: "
                                     + Cracker.alphabet + "\n");
                             helpMessage();
